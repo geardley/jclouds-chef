@@ -44,6 +44,7 @@ import org.jclouds.chef.ChefAsyncApi;
 import org.jclouds.chef.domain.Client;
 import org.jclouds.chef.domain.CookbookVersion;
 import org.jclouds.chef.domain.DatabagItem;
+import org.jclouds.chef.domain.Environment;
 import org.jclouds.chef.domain.Node;
 import org.jclouds.chef.domain.Resource;
 import org.jclouds.chef.domain.Role;
@@ -356,5 +357,10 @@ public class TransientChefAsyncApi implements ChefAsyncApi {
     public ListenableFuture<InputStream> getResourceContents(Resource resource) {
         throw new UnsupportedOperationException();
     }
+
+	@Override
+	public ListenableFuture<Environment> getEnvironment(String environmentName) {
+		 throw new UnsupportedOperationException();
+	}
 
 }

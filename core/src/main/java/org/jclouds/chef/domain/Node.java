@@ -78,8 +78,8 @@ public class Node {
 
    @Override
    public String toString() {
-      return "Node [name=" + name + ", runList=" + runList + ", normal=" + normal + ", default=" + defaultA
-            + ", override=" + override + ", automatic=" + automatic + "]";
+      return "Node [name=" + name + ", \n\trunList=" + runList + ", \n\tnormal=" + normal + ", \n\tdefault=" + defaultA
+            + ", \n\toverride=" + override + ", \n\tautomatic=" + automatic + "]";
    }
 
    public Node(String name, Iterable<String> runList) {

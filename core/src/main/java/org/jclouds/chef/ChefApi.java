@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import org.jclouds.chef.domain.Client;
 import org.jclouds.chef.domain.CookbookVersion;
 import org.jclouds.chef.domain.DatabagItem;
+import org.jclouds.chef.domain.Environment;
 import org.jclouds.chef.domain.Node;
 import org.jclouds.chef.domain.Resource;
 import org.jclouds.chef.domain.Role;
@@ -610,4 +611,16 @@ public interface ChefApi {
     * @return An input stream for the content of the requested resource. 
     */
    InputStream getResourceContents(Resource resource);
+   
+   /**
+    * gets an existing environment.
+    * 
+    * @throws AuthorizationException
+    *            <p/>
+    *            "401 Unauthorized" if you are not a recognized user.
+    *            <p/>
+    *            "403 Forbidden" if you do not have view rights on the node.
+    */
+   Environment getEnvironment(String name);
+   
 }

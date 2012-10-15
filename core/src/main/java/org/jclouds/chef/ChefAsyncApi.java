@@ -46,6 +46,7 @@ import org.jclouds.chef.binders.RoleName;
 import org.jclouds.chef.domain.Client;
 import org.jclouds.chef.domain.CookbookVersion;
 import org.jclouds.chef.domain.DatabagItem;
+import org.jclouds.chef.domain.Environment;
 import org.jclouds.chef.domain.Node;
 import org.jclouds.chef.domain.Resource;
 import org.jclouds.chef.domain.Role;
@@ -481,4 +482,13 @@ public interface ChefAsyncApi {
    @GET
    @ExceptionParser(ReturnNullOnNotFoundOr404.class)
    ListenableFuture<InputStream> getResourceContents(@EndpointParam(parser=UriForResource.class) Resource resource);
+   
+   /**
+    * @see ChefApi#getEnvironment(String)
+    */
+   @GET
+   @Path("/environments/{environment}")
+   @ExceptionParser(ReturnNullOnNotFoundOr404.class)
+   ListenableFuture<Environment> getEnvironment(@PathParam("environment") String environmentName);
+   
 }
